@@ -19,13 +19,13 @@ except ImportError:
 env_path = os.path.join(os.getcwd(), '.env')
 load_dotenv(env_path)
 OPENAI_KEY = os.getenv('OPENAI_API_KEY')
-
+"""
 # Spotify Playlist ID
 playlist_id ="https://open.spotify.com/playlist/0O5sjTRPN1nORFjJNYfPyo?si=236a594d60e6463e"
 
+"""
 
-
-def create_prompt(playlist_id):
+def create_prompt(playlist_id, input_user):
     """
     Function that takes the url of a spotify playlist and creates a prompt based on its' data 
     """
@@ -38,10 +38,11 @@ def create_prompt(playlist_id):
     parameters_prompt = extract_data.parameters_prompt(parameters)
 
     prompt = f"""Create a colourful image with no text that visually represents the Spotify playlist titled '{playlist_name}'. 
-        Emphasize themes and moods from the description of the playlist: '{playlist_description}'. 
-        Incorporate elements or symbols related to the main genres of the playlist: {genres_string}. 
-        In case the artists are well known, include abstract representations or iconic symbols associated with them; the artists are: {artists_string}. 
+        Emphasize themes and moods from the description of the playlist: '{playlist_description}', avoid adding text features to the image. 
+        Incorporate elements or symbols related to the main genres of the playlist: {genres_string}, avoid adding text features to the image.. 
+        In case the artists are well known, include abstract representations or iconic symbols associated with them; the artists are: {artists_string}, avoid adding text features to the image. 
         {parameters_prompt}.
+        In addition, the user adds these intructions: {input_user}.
         Avoid using any text or words in the image and make sure that all the objects represented have the right proportions."""
 
     return playlist_name, prompt
@@ -61,7 +62,7 @@ def generate_image_with_dalle(prompt):
     
     return response.data[0].url
 
-
+"""
 # Example usage
 PLAYLIST, PROMPT = create_prompt(playlist_id)
 URL = generate_image_with_dalle(PROMPT)
@@ -72,3 +73,4 @@ data = requests.get(URL).content
 f = open(f'generated_images/z_{PLAYLIST}.jpg','wb') 
 f.write(data) 
 f.close() 
+"""

@@ -1,3 +1,4 @@
 .env
+.cache
 generated_images/
 playlists_data/

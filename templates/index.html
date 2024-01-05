@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+
+            <form method="POST">
+                <h4>Create an image from your playlist by submitting its' url:</h4>
+                <input type="text" name="playlist_id" placeholder="Playlist url" required>
+
+                <h4>Describe how you would like it to look like (example: add a lizard, make the main color red)</h4>
+                <input type="text" name="input_string" placeholder="Enter a string" required>
+
+                <button type="submit">Create</button>
+            </form>
+</div>
+
+</body>
+</html>
