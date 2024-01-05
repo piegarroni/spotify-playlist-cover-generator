@@ -45,6 +45,8 @@ To use this app you must get yourself a *Spotify client id*, *Spotify secret key
 
 With the current settings, generating one image costs about 4 cents.
 
+I recommend adding a description to your playlists for better results, doesn't have to be too specific.
+
 ## Have fun experimenting!
 
 
