@@ -1,10 +1,15 @@
 # Spotify Image Generator
 
 ## What it is 
-A Flask webapp to generate images for Spotify playlists based on the playlist's url and a user input.
+A Flask webapp that generates images for Spotify playlists based on the playlist's url and an optional user input.
 
 ## How it works
-The data from the playlist is extracted from the Spotify API and merged to the user's input to create a prompt; ultimately the prompt is sent as a request to DALL-E 3 through the OpenAi API and the image is displayed on the page.
+
+1. The data from the playlist is retrieved using the the Spotify API;
+2. The data is processed;
+3. The optional user input is added to create the final prompt;
+4. The prompt is sent as a request to DALL-E 3 through the OpenAi API;
+5. The webapp redirects to a different endpoint where the image is displayed.
 
 The input page looks something like this:
 <br>
